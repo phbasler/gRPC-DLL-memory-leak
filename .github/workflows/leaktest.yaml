@@ -6,6 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: sudo apt update && sudo apt install valgrind libgrpc-dev
+            - uses: actions/checkout@v4
             - run: cmake -S . -B build
             - run: cmake --build build
             - run: valgrind --leak-check=full ./build/LoadTestWithoutSplice
