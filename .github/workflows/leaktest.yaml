@@ -1,0 +1,12 @@
+name: LeakTest
+on:
+    push
+jobs:
+    LeakTest:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sudo apt update && sudo apt install valgrind libgrpc-dev
+            - run: cmake -S . -B build
+            - run: cmake --build build
+            - run: valgrind --leak-check=full ./build/LoadTestWithoutSplice
+            - run: valgrind --leak-check=full ./build/LoadTestWithSplice
