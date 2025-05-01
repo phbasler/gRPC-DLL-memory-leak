@@ -14,7 +14,7 @@ jobs:
                 mkdir -p cmake/build
                 cd cmake/build
                 cmake -DCMAKE_CXX_STANDARD=17 ../..
-                make -j install
+                make install
             - run: cmake -S . -B build
             - run: cmake --build build
             - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice
