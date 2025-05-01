@@ -2,7 +2,7 @@
 
 namespace
 {
-    #ifdef UseSplice
-    grpc::Splice slice;
+    #ifdef UseSlice
+    grpc::Slice slice;
     #endif
 }

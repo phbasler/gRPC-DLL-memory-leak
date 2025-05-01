@@ -17,5 +17,5 @@ jobs:
                 make -j install
             - run: cmake -S . -B build
             - run: cmake --build build
-            - run: valgrind --leak-check=full ./build/LoadTestWithoutSplice
-            - run: valgrind --leak-check=full ./build/LoadTestWithSplice
+            - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice
+            - run: valgrind --leak-check=full ./build/LoadTestWithSlice
