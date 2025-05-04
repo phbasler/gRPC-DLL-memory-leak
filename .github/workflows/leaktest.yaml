@@ -19,3 +19,5 @@ jobs:
             - run: cmake --build build
             - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice
             - run: valgrind --leak-check=full ./build/LoadTestWithSlice
+            - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice --no-unload
+            - run: valgrind --leak-check=full ./build/LoadTestWithSlice --no-unload
