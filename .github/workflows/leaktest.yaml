@@ -7,14 +7,14 @@ jobs:
         steps:
             - run: sudo apt update && sudo apt install valgrind
             - uses: actions/checkout@v4
-            - run: |
-                git clone -b v1.72.0 https://github.com/grpc/grpc.git
-                cd grpc
-                git submodule update --init
-                mkdir -p cmake/build
-                cd cmake/build
-                cmake -DCMAKE_CXX_STANDARD=17 ../..
-                make install
+           # - run: |
+           #     git clone -b v1.72.0 https://github.com/grpc/grpc.git
+           #     cd grpc
+           #     git submodule update --init
+           #     mkdir -p cmake/build
+           #     cd cmake/build
+          #      cmake -DCMAKE_CXX_STANDARD=17 ../..
+           #     make install
             - run: cmake -S . -B build
             - run: cmake --build build
             - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice
