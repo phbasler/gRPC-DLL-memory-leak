@@ -17,7 +17,7 @@ jobs:
            #     make install
             - run: cmake -S . -B build
             - run: cmake --build build
-            - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice
-            - run: valgrind --leak-check=full ./build/LoadTestWithSlice
-            - run: valgrind --leak-check=full ./build/LoadTestWithoutSlice --no-unload
-            - run: valgrind --leak-check=full ./build/LoadTestWithSlice --no-unload
+            - run: valgrind --leak-check=full --show-leak-kinds=all ./build/LoadTestWithoutSlice
+            - run: valgrind --leak-check=full --show-leak-kinds=all ./build/LoadTestWithSlice
+            - run: valgrind --leak-check=full --show-leak-kinds=all ./build/LoadTestWithoutSlice --no-unload
+            - run: valgrind --leak-check=full --show-leak-kinds=all ./build/LoadTestWithSlice --no-unload
