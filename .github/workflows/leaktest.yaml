@@ -5,7 +5,7 @@ jobs:
     LeakTest:
         runs-on: ubuntu-latest
         steps:
-            - run: sudo apt update && sudo apt install valgrind
+            - run: sudo apt update && sudo apt install -y valgrind libgrpc++-dev
             - uses: actions/checkout@v4
            # - run: |
            #     git clone -b v1.72.0 https://github.com/grpc/grpc.git
