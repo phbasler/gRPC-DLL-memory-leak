@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     }
     std::cout << "loaded" << std::endl;
 
-    if(argc == 1l
+    if(argc == 1)
     {
         std::cout << dlclose(library) << std::endl;
     }
