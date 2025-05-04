@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(LeakTest CXX)
 
-find_package(protobuf REQUIRED)
+find_package(Protobuf REQUIRED)
 find_package(gRPC REQUIRED)
 
 add_library(TestLib_WithSlice SHARED)
